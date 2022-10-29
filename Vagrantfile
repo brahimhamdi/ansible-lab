@@ -2,6 +2,12 @@ Vagrant.require_version ">= 2.0.0"
 
 boxes = [
     {
+        :name => "ansible",
+        :eth1 => "192.168.201.10",
+        :mem => "1024",
+        :cpu => "1"
+    },
+    {
         :name => "node1",
         :eth1 => "192.168.201.11",
         :mem => "1024",
