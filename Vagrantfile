@@ -29,7 +29,7 @@ boxes = [
 ]
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "generic/rhel8"
+  config.vm.box = "generic/ubuntu2004"
 
   boxes.each do |opts|
       config.vm.define opts[:name] do |config|
