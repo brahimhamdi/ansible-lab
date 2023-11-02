@@ -18,18 +18,18 @@ boxes = [
         :eth1 => "192.168.201.12",
         :mem => "1024",
         :cpu => "1"
-    },
-    {
-        :name => "node3",
-        :eth1 => "192.168.201.13",
-        :mem => "1024",
-        :cpu => "1"
+#    },
+#    {
+#        :name => "node3",
+#        :eth1 => "192.168.201.13",
+#        :mem => "1024",
+#        :cpu => "1"
     }
 
 ]
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "generic/ubuntu2004"
+  config.vm.box = "generic/ubuntu2204"
 
   boxes.each do |opts|
       config.vm.define opts[:name] do |config|
@@ -42,4 +42,7 @@ Vagrant.configure(2) do |config|
         config.vm.network :private_network, ip: opts[:eth1]
       end
   end
+  config.vm.provision "shell", inline: <<-SHELL
+     sudo apt update
+   SHELL
 end
