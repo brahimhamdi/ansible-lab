@@ -2,10 +2,10 @@ Vagrant.require_version ">= 2.0.0"
 
 boxes = [
     {
-        :name => "master",
-        :eth1 => "192.168.201.2",
-        :mem => "4096",
-        :cpu => "2"
+        :name => "ansible",
+        :eth1 => "192.168.201.10",
+        :mem => "1024",
+        :cpu => "1"
     },
     {
         :name => "node1",
@@ -44,5 +44,6 @@ Vagrant.configure(2) do |config|
   end
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt update
+     sudo apt install vim wget tree -y
    SHELL
 end
