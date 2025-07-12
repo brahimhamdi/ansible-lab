@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "ansible" do |ansible|
     ansible.vm.box = "generic/alma9"
     ansible.vm.hostname = "ansible"
-    ansible.vm.network "private_network", ip: "192.168.56.10"
+    ansible.vm.network "private_network", ip: "192.168.56.200"
     
     ansible.vm.provider "virtualbox" do |vb|
       vb.name = "ansible-controller"
@@ -27,11 +27,11 @@ Vagrant.configure("2") do |config|
   end
 
   # Configuration des nœuds dans une boucle
-  (1..2).each do |i|
+  (1..3).each do |i|
     config.vm.define "node#{i}" do |node|
       node.vm.box = "generic/ubuntu2204"
       node.vm.hostname = "node#{i}"
-      node.vm.network "private_network", ip: "192.168.56.1#{i}"
+      node.vm.network "private_network", ip: "192.168.56.20#{i}"
       
       node.vm.provider "virtualbox" do |vb|
         vb.name = "ansible-node#{i}"
