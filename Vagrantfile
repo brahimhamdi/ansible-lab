@@ -21,8 +21,6 @@ Vagrant.configure("2") do |config|
     ansible.vm.provision "shell", inline: <<-SHELL
       sudo dnf install -y epel-release
       sudo dnf install -y ansible
-#      sudo sed -i 's/^#host_key_checking = False/host_key_checking = False/' /etc/ansible/ansible.cfg
-#      echo -e "[nodes]\nnode1 ansible_host=192.168.56.11\nnode2 ansible_host=192.168.56.12" | sudo tee /etc/ansible/hosts
     SHELL
   end
 
