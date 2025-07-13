@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     # Provisionnement pour installer Ansible
     ansible.vm.provision "shell", inline: <<-SHELL
       sudo dnf install -y epel-release
-      sudo dnf install -y ansible
+      sudo dnf install -y ansible tree
     SHELL
   end
 
