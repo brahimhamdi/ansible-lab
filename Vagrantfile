@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
       
       node.vm.provision "shell", inline: <<-SHELL
         sudo apt-get update
-        sudo apt-get install -y python3
+        sudo apt-get install -y python3 vim git tree
       SHELL
     end
   end
