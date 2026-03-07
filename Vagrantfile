@@ -16,6 +16,11 @@ Vagrant.configure("2") do |config|
       node.vm.provision "shell", inline: <<-SHELL
         sudo apt-get update
         sudo apt-get install -y python3 vim git tree
+        echo 'colorscheme ron' >> ~/.vimrc
+        echo 'set tabstop=2' >> ~/.vimrc
+        echo 'set shiftwidth=2' >> ~/.vimrc
+        echo 'set expandtab' >> ~/.vimrc
+
       SHELL
     end
   end
