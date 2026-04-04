@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
   
   (0..3).each do |i|
     config.vm.define "node#{i}" do |node|
-      node.vm.box = "generic/ubuntu2204"
+      node.vm.box = "ubuntu64/noble64"
       node.vm.hostname = "node#{i}"
       node.vm.network "private_network", ip: "192.168.60.1#{i}"
       
