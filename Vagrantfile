@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
       
       node.vm.provider "virtualbox" do |vb|
         vb.name = "ansible-node#{i}"
-        vb.memory = "4096"
+        vb.memory = "2048"
         vb.cpus = "1"
       end
       
